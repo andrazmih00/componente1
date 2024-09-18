@@ -1,0 +1,25 @@
+<h2>Componente</h2>
+<ul>
+    <li *ngFor="let componente of componentes">
+        {{componente.name}} - Type: {{componente.type}}
+    </li>
+</ul>
+
+//AÑADIR COMPONENTE
+
+<h3>Add Componente</h3>
+<input #componenteName placeholder="Name"/>
+<input #componenteType placeholder="Type"/>
+<button (click)="addComponente({name: componenteName.value, 
+    type: componenteType.value})">Add componente</button>
+
+//AÑADIR COMPONENTE CON SELECTOR
+
+<h3>Add Componente select</h3>
+<input #componenteName2 placeholder="Name"/>
+<select #componenteType2>
+<option *ngFor="let type of tiposComponente" 
+    [value] = "type">{{type}}</option>
+</select>
+<button (click)="addComponente({name: componenteName2.value,
+    type: componenteType2.value})">Add componente</button>
